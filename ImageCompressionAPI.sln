@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32104.313
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageCompressionAPI", "ImageCompressionAPI.csproj", "{43D8D7F6-0DC1-4FF5-B6E8-F1A4DCE94DCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43D8D7F6-0DC1-4FF5-B6E8-F1A4DCE94DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D8D7F6-0DC1-4FF5-B6E8-F1A4DCE94DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D8D7F6-0DC1-4FF5-B6E8-F1A4DCE94DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D8D7F6-0DC1-4FF5-B6E8-F1A4DCE94DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5534F05-F1BE-4D83-9C0D-E4958CEEAFB8}
+	EndGlobalSection
+EndGlobal

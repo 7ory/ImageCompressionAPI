@@ -24,6 +24,7 @@ namespace ImageCompressionAPI.Controllers
         {
             string[] filePaths = Directory.GetFiles(@"C:\Users\User\Downloads\Images\");
 
+            //Destination path
             //string OutputPath = "C:\\Users\\User\\Downloads\\Images-Output\\";
             
 

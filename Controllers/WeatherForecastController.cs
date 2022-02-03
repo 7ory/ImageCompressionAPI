@@ -22,38 +22,25 @@ namespace ImageCompressionAPI.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            string[] filePaths = Directory.GetFiles(@"C:\Users\User\Downloads\Images\");
+            string[] filepaths = Directory.GetFiles(@"Images");
 
-            //Destination path
-            //string OutputPath = "C:\\Users\\User\\Downloads\\Images-Output\\";
-            
+            string outputPath = "ImagesOutput";
 
-            foreach (var item in filePaths)
+            foreach (var item in filepaths)
             {
                 using (var image = new MagickImage(item))
                 {
                     var size = new MagickGeometry(500, 500);
-                    // This will resize the image to a fixed size without maintaining the aspect ratio.
-                    // Normally an image will be resized to fit inside the specified size.
+
                     size.IgnoreAspectRatio = false;
 
                     image.Resize(size);
 
+                    string dest = Path.Combine(outputPath, Path.GetFileNameWithoutExtension(item) + "- compressed" + ".jpg");
 
-                    // Save the result
-                    image.Write(item);
+                    image.Write(dest);
                 }
             }
-
-
-
-
-
-
-
-
-
-
 
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

@@ -9,29 +9,29 @@ namespace ImageCompressionAPI.Controllers
     public class CompressController : ControllerBase
     {
 
-        [HttpGet]
-        public IActionResult Compress()
-        {
-            string[] filepaths = Directory.GetFiles(@"Images");
+        //[HttpGet]
+        //public IActionResult Compress()
+        //{
+        //    string[] filepaths = Directory.GetFiles(@"Images");
 
-            string outputPath = "ImagesOutput";
+        //    string outputPath = "ImagesOutput";
 
-            foreach (var item in filepaths)
-            {
-                using (var image = new MagickImage(item))
-                {
-                    var size = new MagickGeometry(500, 500);
+        //    foreach (var item in filepaths)
+        //    {
+        //        using (var image = new MagickImage(item))
+        //        {
+        //            var size = new MagickGeometry(500, 500);
 
-                    size.IgnoreAspectRatio = false;
+        //            size.IgnoreAspectRatio = false;
 
-                    image.Resize(size);
+        //            image.Resize(size);
 
-                    string dest = Path.Combine(outputPath, Path.GetFileNameWithoutExtension(item) + "- compressed" + ".jpg");
+        //            string dest = Path.Combine(outputPath, Path.GetFileNameWithoutExtension(item) + "- compressed" + ".jpg");
 
-                    image.Write(dest);
-                }
-            }
+        //            image.Write(dest);
+        //        }
+        //    }
 
-        }
+        //}
     }
 }

@@ -22,7 +22,7 @@ namespace ImageCompressionAPI.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            string[] filepaths = Directory.GetFiles(@" Images");
+            string[] filepaths = Directory.GetFiles(@"Images");
 
             string outputPath = "ImagesOutput";
 

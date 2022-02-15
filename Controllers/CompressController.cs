@@ -1,6 +1,7 @@
 ﻿using ImageMagick;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing;
 
 namespace ImageCompressionAPI.Controllers
 {
@@ -16,11 +17,24 @@ namespace ImageCompressionAPI.Controllers
 
             string outputPath = "C:\\Users\\User\\Downloads\\Images-Output";
 
+            var ResizePercentage = 0.6;
+
             foreach (var item in filepaths)
             {
+
+                FileInfo file = new FileInfo(item);
+
+                Bitmap img = new Bitmap(item);
+
+                var imageHeight = img.Height*ResizePercentage;
+                var imageWidth = img.Width* ResizePercentage;
+
+               
+
                 using (var image = new MagickImage(item))
-                {    
-                    var size = new MagickGeometry(480, 2460);
+                {
+
+                    var size = new MagickGeometry((int)imageWidth, (int)imageHeight);
 
                     size.IgnoreAspectRatio = true;
 

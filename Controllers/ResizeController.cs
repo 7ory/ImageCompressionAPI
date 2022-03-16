@@ -7,11 +7,11 @@ namespace ImageCompressionAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompressController : ControllerBase
+    public class ResizeController : ControllerBase
     {
 
         [HttpGet]
-        public IActionResult Compress()
+        public IActionResult Resize()
         {
             string[] filepaths = Directory.GetFiles(@"C:\Users\User\Downloads\Images", "*.jpg");
 

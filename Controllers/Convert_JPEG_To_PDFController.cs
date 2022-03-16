@@ -13,7 +13,7 @@ namespace ImageCompressionAPI.Controllers
         {
             string[] filepaths = Directory.GetFiles(@"C:\Users\User\Downloads\Images", "*.jpg");
 
-            string outputPath = @"C:\Images";
+            string outputPath = @"C:\Output-PDFs";
 
             foreach (var item in filepaths)
             {

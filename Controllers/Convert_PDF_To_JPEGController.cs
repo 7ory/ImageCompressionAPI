@@ -1,23 +1,29 @@
-﻿using ImageMagick;
+﻿using Ghostscript.NET;
+using Ghostscript.NET.Rasterizer;
+using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing.Imaging;
+using System.Reflection;
 
 namespace ImageCompressionAPI.Controllers
 {
-    public class Convert_PDF_To_JPEGController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class Convert_PDF_To_JPEGController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            // Read image from file
-            using (var image = new MagickImage("Snakeware.jpg"))
-            {
-                // Will use the CMYK profile if the image does not contain a color profile.
-                // The second profile will transform the colorspace from CMYK to RGB
-                image.TransformColorSpace(ColorProfile.USWebCoatedSWOP, ColorProfile.SRGB);
 
-                // Save image as png
-                image.Write(SampleFiles.OutputDirectory + "Snakeware.png");
-            }
-            return View();
+        [HttpGet]
+        public IActionResult Convert()
+        {
+
+            string inputPdfPath = @"C:\Users\User\Downloads\Images\AccountDetails (1).pdf";
+            string outputPath = @"C:\Output-PDFs\Output images";
+            int PageNumber;
+
+
+            return Ok();
         }
+
+
     }
 }

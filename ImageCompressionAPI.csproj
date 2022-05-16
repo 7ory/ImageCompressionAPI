@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Ghostscript.NET" Version="1.2.3" />
+    <PackageReference Include="GhostScriptDllCore" Version="1.0.0.11" />
     <PackageReference Include="Grpc.Core" Version="2.45.0" />
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="11.0.0" />

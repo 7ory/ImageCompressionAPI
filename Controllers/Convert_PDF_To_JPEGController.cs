@@ -36,10 +36,15 @@ namespace ImageCompressionAPI.Controllers
                 dev.Pdf.FirstPage = PageNumber;
                 dev.Pdf.LastPage = PageNumber;
                 dev.CustomSwitches.Add("-dDOINTERPOLATE");
-            
+
                 // dev.OutputPath = Server.MapPath(@"~/tempImages/" + outImageName);
                 dev.OutputPath = Path.Combine(outputPath, outImageName);
-                dev.Process();
+                if (!Directory.Exists(dev.OutputPath))
+                {
+                 dev.Process();
+                }
+                
+                
             }
 
 

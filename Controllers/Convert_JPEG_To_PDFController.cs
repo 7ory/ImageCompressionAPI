@@ -21,9 +21,14 @@ namespace ImageCompressionAPI.Controllers
                 using (var image = new MagickImage(item))
                 {
                     string dest = Path.Combine(outputPath, Path.GetFileNameWithoutExtension(item) + "- converted" + ".pdf");
+                    if (!Directory.Exists(dest))
+                    {
+                        // Create pdf file with a single page
 
-                    // Create pdf file with a single page
-                    image.Write(dest);
+                        image.Write(dest);
+                    }
+
+                   
                 }
 
             }
